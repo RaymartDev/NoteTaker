@@ -53,6 +53,9 @@ namespace NoteTaker
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            if (dataGrid.CurrentCell == null)
+                return;
+
             int index = dataGrid.CurrentCell.RowIndex;
 
             dataTable.Rows[index].Delete();
